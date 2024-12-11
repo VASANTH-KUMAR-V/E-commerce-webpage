@@ -1,0 +1,83 @@
+/* Navbar background color */
+.navbar {
+  background-color: white !important;
+}
+
+/* Logo styling */
+.logo-img {
+  height: 40px; /* Adjust the logo height */
+  width: auto;
+  margin-right: 0px;margin-top: 10px;
+}
+
+/* Text for logo */
+.logo-text {
+  flex-grow: 1;
+}
+
+/* Button styling for the nav items */
+.nav-btn {
+  color: rgb(32, 184, 15) !important; /* Green color */
+  font-family:Arial, Helvetica, sans-serif;
+
+}
+
+.nav-btn:hover {
+  background-color: transparent !important;
+  color: #ffb524 !important; /* Hover color */
+}
+
+/* Avatar style for profile */
+.MuiAvatar-root {
+  width: 30px;
+  height: 30px;
+}
+.navbar {
+  background-color: #4caf50; /* Green background */
+}
+
+.logo-text {
+  display: flex;
+  align-items: center;
+}
+
+.logo-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.logo-img {
+  height: 50px;
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.nav-link:hover {
+  color: #ffd700; /* Highlight color */
+}
+
+.cart-count {
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 12px;
+  position: absolute;
+  top: -5px;
+  right: -10px;
+}
