@@ -1,0 +1,8 @@
+{
+  "projects": {
+    "default": "e-commerce-website-2ee9e",
+    "production": "e-commerce-website-2ee9e"
+  },
+  "targets": {},
+  "etags": {}
+}
