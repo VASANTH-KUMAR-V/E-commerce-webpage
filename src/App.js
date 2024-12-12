@@ -1,11 +1,17 @@
 import React, { useState } from 'react';
-import Navbar from './components/Navbar/Navbar'; // Importing Navbar component
+import Navbar from './components/Navbar/Navbar'; 
+import Hero from './components/hero/Hero.jsx';
+import Footer from './components/footer/Footer.jsx'
 
 const App = () => {
-  const [cart, setCart] = useState([]); // Cart state to hold cart items
+  const [cart, setCart] = useState([]); 
   
   return (
-    <Navbar />
+    <div>
+      <Navbar />
+      <Hero />
+      <Footer />
+    </div>
   );
 };
 

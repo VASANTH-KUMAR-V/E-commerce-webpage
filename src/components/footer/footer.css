@@ -1,0 +1,96 @@
+.container-footer {
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #45595B;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .container-item h2 {
+    color: #81C408;
+    font-family: sans-serif;
+  }
+  
+  .container-item h6 {
+    color: #f39c12;
+    font-family: sans-serif;
+  }
+  
+  /* Flexbox for menu, already responsive in some cases */
+  .menu {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;  /* Allow wrapping in mobile */
+  }
+  
+  /* Menu items styling */
+  .menu-items h5 {
+    color: #81C408;
+  }
+  
+  .menu-items p {
+    color: rgba(255, 255, 255, .5);
+    flex-wrap: wrap;  /* Wrap text on mobile */
+  }
+  
+  .menu-items a {
+    text-decoration: none; 
+    color: rgba(255, 255, 255, .5);
+  }
+  
+  .menu-items li {
+    list-style-type: none;
+  }
+  
+  /* Hover state for links */
+  .menu-items a:hover {
+    color: #81C408;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+  }
+  
+  /* Mobile responsiveness */
+  @media (max-width: 768px) {
+    .menu {
+      flex-direction: column;  /* Stack items vertically */
+      align-items: center;     /* Center items horizontally */
+    }
+  
+    .menu-items {
+      width: 100%;  /* Make menu items take full width */
+      text-align: center;  /* Center text */
+    }
+  
+    .menu-items h5 {
+      font-size: 1.2rem;  /* Slightly larger font on mobile */
+      margin-top: 10px;  /* Add padding on top and bottom */
+    }
+  
+    .menu-items p {
+      font-size: 0.9rem;  /* Smaller text for better fit */
+    }
+  
+    .menu-items a {
+      padding: 5px 0;
+      margin-top: 0;  /* Add spacing between links */
+    }
+  }
+  
+  /* For very small screens (e.g., phones in portrait mode) */
+  @media (max-width: 480px) {
+    .container-footer {
+      padding: 10px;  /* Less padding on small screens */
+    }
+  
+    .menu-items h5 {
+      font-size: 1rem;  /* Even smaller font size */
+      padding: 8px 0;  /* Reduced padding for very small screens */
+    }
+  
+    .menu-items p {
+      font-size: 0.8rem;  /* Smaller text size for tight spaces */
+    }
+  }
+  

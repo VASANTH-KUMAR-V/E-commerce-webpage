@@ -1,0 +1,138 @@
+/* Hero Header Styles */
+.hero-header {
+    background: rgb(253,252,251);
+background: -moz-linear-gradient(90deg, rgba(253,252,251,1) 30%, rgba(194,241,145,0.770920868347339) 100%);
+background: -webkit-linear-gradient(90deg, rgba(253,252,251,1) 30%, rgba(194,241,145,0.770920868347339) 100%);
+background: linear-gradient(90deg, rgba(253,252,251,1) 30%, rgba(194,241,145,0.770920868347339) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#fdfcfb",endColorstr="#c2f191",GradientType=1);
+background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: auto;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    padding: 20px;
+    margin-top: 50px;
+    position: relative; /* Added for positioning of elements */
+}
+
+/* Text Styling */
+.text-secondar {
+    color: #FFB524;
+    padding-bottom: 5%;
+    padding-top: 5%;
+    align-items: center;
+    font-family:sans-serif ;
+     /* Add padding below for separation */
+}
+
+.text-primar {
+    color: #81C408; /* Green color */
+    font-family:sans-serif;
+    padding-bottom: 20px; /* Add padding below for separation */
+}
+
+/* Carousel Image Styling */
+.carousel-item img {
+    max-height: 100%;
+    object-fit: cover;
+    padding: 10px;
+}
+
+/* Padding for Logo and Text */
+.logo-padding {
+    padding: 10px; /* Adjust padding as needed */
+}
+
+
+.header-padding {
+    padding: 10px; /* Adjust padding for text elements */
+}
+
+.h4{
+    color: #FFB524;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .hero-header {
+        height: auto;
+        padding: 10px;
+        text-align: center;
+        align-items: center; /* Center-align on small screens */
+    }
+
+    .hero-header h4,
+    .hero-header h1 {
+        padding: 0 10px; /* Add horizontal padding for small screens */
+    }
+
+    .hero-header h4 {
+        font-size: 1.2em;
+        margin-bottom: 10px;
+        display: block; /* Ensure visibility on small screens */
+    }
+
+    .hero-header h1 {
+        font-size: 1.8em;
+        margin-bottom: 10px; /* Add some space below the heading */
+    }
+
+    .carousel-item img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .hero-header {
+        height: 80vh;
+        padding: 15px;
+        text-align: left;
+    }
+
+    .hero-header h4 {
+        font-size: 1.5em;
+        padding: 0 15px; /* Add horizontal padding */
+    }
+
+    .hero-header h1 {
+        font-size: 2.2em;
+        margin-bottom: 10px;
+        padding: 0 15px; /* Add horizontal padding */
+    }
+
+    .carousel-item img {
+        width: 100%;
+        height: auto;
+        padding: 0; /* Remove padding for medium screens */
+    }
+}
+
+@media (min-width: 1025px) {
+    .hero-header {
+        height: 100vh;
+        padding: 20px;
+        text-align: left;
+    }
+
+    .hero-header h4 {
+        font-size: 1.8em;
+        padding: 0 20px; /* Add horizontal padding */
+    }
+
+    .hero-header h1 {
+        font-size: 2.5em;
+        margin-bottom: 15px;
+        padding: 0 20px; /* Add horizontal padding */
+    }
+
+    .carousel-item img {
+        width: 100%;
+        height: auto;
+        padding: 10px; /* Add padding for larger screens */
+    }
+}
