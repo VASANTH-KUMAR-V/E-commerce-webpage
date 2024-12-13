@@ -9,11 +9,14 @@ import Menu from "@mui/material/Menu";
 import HomeIcon from "@mui/icons-material/Home";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import AccountCircle from "@mui/icons-material/AccountCircle";
-import ExitToAppIcon from "@mui/icons-material/ExitToApp"; // For logout icon
 import logo from "../Assets/img/ollir-organics-background.png";
 import MoreIcon from "@mui/icons-material/MoreVert";
+import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { ShopContext } from "../../Context/ShopContext"; // Import ShopContext
 
 export default function PrimarySearchAppBar() {
+  const { getTotalCartItems } = useContext(ShopContext); // Get total cart items from context
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
@@ -78,18 +81,22 @@ export default function PrimarySearchAppBar() {
       onClose={handleMobileMenuClose}
     >
       <MenuItem>
-        <IconButton size="large" aria-label="home" color="inherit">
-          <HomeIcon sx={{ color: "#81C408" }} /> {/* Home icon */}
-        </IconButton>
-        <p>Home</p>
+        <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
+          <IconButton size="large" aria-label="home" color="inherit">
+            <HomeIcon sx={{ color: "#81C408" }} /> {/* Home icon */}
+          </IconButton>
+          <p>Home</p>
+        </Link>
       </MenuItem>
       <MenuItem>
-        <IconButton size="large" aria-label="cart" color="inherit">
-          <Badge badgeContent={1} color="error">
-            <ShoppingCartIcon sx={{ color: "#81C408" }} /> {/* Cart icon */}
-          </Badge>
-        </IconButton>
-        <p>Cart</p>
+        <Link to="/cart" style={{ textDecoration: "none", color: "inherit" }}>
+          <IconButton size="large" aria-label="cart" color="inherit">
+            <Badge badgeContent={getTotalCartItems()} color="error"> {/* Dynamic cart quantity */}
+              <ShoppingCartIcon sx={{ color: "#81C408" }} /> {/* Cart icon */}
+            </Badge>
+          </IconButton>
+          <p>Cart</p>
+        </Link>
       </MenuItem>
       <MenuItem onClick={handleProfileMenuOpen}>
         <IconButton
@@ -109,7 +116,6 @@ export default function PrimarySearchAppBar() {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="fixed" sx={{ backgroundColor: "white" }}>
-        {" "}
         {/* White background */}
         <Toolbar>
           <img
@@ -121,17 +127,21 @@ export default function PrimarySearchAppBar() {
           <Box sx={{ flexGrow: 1 }} />
 
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
-            {/* Home Icon (updated) */}
-            <IconButton size="large" aria-label="home" color="inherit">
-              <HomeIcon sx={{ color: "#81C408" }} />
-            </IconButton>
+            {/* Home Icon (wrapped in Link) */}
+            <Link to="/" style={{ textDecoration: "none" }}>
+              <IconButton size="large" aria-label="home" color="inherit">
+                <HomeIcon sx={{ color: "#81C408" }} />
+              </IconButton>
+            </Link>
 
-            {/* Cart Icon */}
-            <IconButton size="large" aria-label="cart" color="inherit">
-              <Badge badgeContent={1} color="error">
-                <ShoppingCartIcon sx={{ color: "#81C408" }} />
-              </Badge>
-            </IconButton>
+            {/* Cart Icon (wrapped in Link) */}
+            <Link to="/cart" style={{ textDecoration: "none" }}>
+              <IconButton size="large" aria-label="cart" color="inherit">
+                <Badge badgeContent={getTotalCartItems()} color="error"> {/* Dynamic cart quantity */}
+                  <ShoppingCartIcon sx={{ color: "#81C408" }} />
+                </Badge>
+              </IconButton>
+            </Link>
 
             {/* Profile Icon with Menu */}
             <IconButton
@@ -157,8 +167,7 @@ export default function PrimarySearchAppBar() {
               onClick={handleMobileMenuOpen}
               color="inherit"
             >
-              <MoreIcon sx={{ color: "#81C408" }} />{" "}
-              {/* Set icon color to green */}
+              <MoreIcon sx={{ color: "#81C408" }} />
             </IconButton>
           </Box>
         </Toolbar>

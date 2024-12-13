@@ -6,7 +6,7 @@ import Logo from '../Assets/img/ollir-organics-background.png';
 const Handmade = () => {
     return (
         <div className="container-fluid hero-header py-5" id="Handmade">
-            <div className="container py-5">
+            <div >
                 <div className="row g-4 align-items-center">
                     <div className="col-lg-6">
                         <div id="carouselId" className="carousel slide position-relative" data-bs-ride="carousel">
