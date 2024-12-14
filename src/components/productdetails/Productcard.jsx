@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './productcard.css';
 import Hero from '../hero/Hero.jsx';
+import Features from '../features/Feature.jsx'
+import Nattusakkarai from '../nattusakkarai/Nattusakkarai.jsx'
+import Testimonial from '../testimonial/Testimonial.jsx'
 
 // Import images
 import HairOilImage from '../Assets/img/Hair-oil.jpg';
@@ -117,7 +120,7 @@ const ProductCard = () => {
   return (
     <div className="product-container" id='Productcard'>
       <Hero />
-      <h2 className='h2'>Our Products</h2>
+      <h2 className='heading'>Our Products</h2>
       <div className="product-filters" id="product-filters">
         <button className="filter-btn all-products" onClick={() => filterProducts('all')}>All Products</button>
         <button className="filter-btn skincare" onClick={() => filterProducts('skincare')}>Skin Care</button>
@@ -138,7 +141,10 @@ const ProductCard = () => {
           </div>
         ))}
       </div>
-
+        <Features />
+        <Nattusakkarai />
+        <Testimonial />
+        
     </div>
   );
 };

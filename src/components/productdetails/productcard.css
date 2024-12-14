@@ -24,6 +24,12 @@
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }
 
+.heading{
+    
+    margin-top: 5%;
+    color: #FFB524;
+    text-align: center;
+}
 /* Hover-Zoom Effect for Product Images */
 .product-image {
     width: 100%;
@@ -67,7 +73,7 @@
 /* Product Filters */
 .product-filters {
     display: flex;
-    justify-content: end;
+    justify-content: center;
     margin-bottom: 20px;
     padding: 20px 70px;
 }
@@ -132,7 +138,7 @@
 /* Desktop view adjustments */
 @media (min-width: 1025px) {
     .product-card {
-        width: calc(33.33% - 40px); /* Adjust for three cards per row */
+        width: calc(25% - 40px); /* Reduced width for desktop (4 cards per row) */
     }
 }
 
@@ -156,4 +162,3 @@
     letter-spacing: 2px;
     position: relative;
 }
-

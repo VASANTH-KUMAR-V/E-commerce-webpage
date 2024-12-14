@@ -1,0 +1,111 @@
+/* Common button styles */
+.scroll-button,
+.whatsapp-button {
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1000;
+    font-size: 1.2em;
+    text-decoration: none;
+    color: #fff;
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transition */
+}
+
+/* WhatsApp Button */
+.whatsapp-button {
+    bottom: 80px;
+    right: 30px;
+    background-color: #81C408;
+    text-decoration: none;
+    overflow: visible; /* Allow text to be seen on hover */
+}
+
+.whatsapp-button:hover  {
+    opacity: 1; /* Show text on hover */
+    transform: scale(1); /* Scale up the text circle */
+    background-color: #FFB524;
+    
+}
+
+.whatsapp-text {
+    position: absolute;
+    top: 50%; /* Center vertically relative to the icon */
+    right: 150%; /* Position text to the right of the icon */
+    transform: translate(0, -50%) scale(0); /* Center and scale down initially */
+    background-color: #81C408;
+    color: #fff;
+    padding: 10% 20%; /* Adjust padding in percentage for responsiveness */
+    font-size: 80%; /* Adjust font size relative to parent */
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s, transform 0.3s; /* Smooth transition for text */
+    border-radius: 10%;
+}
+
+.whatsapp-button:hover .whatsapp-text {
+    opacity: 1; /* Show text on hover */
+    transform: translate(0, -50%) scale(1); /* Scale text to normal size */
+}
+
+
+/* Scroll to Top Button */
+.scroll-button {
+    bottom: 30px;
+    right: 30px;
+    background-color: #81C408;
+}
+
+.scroll-button:hover {
+    background-color: #FFB524;
+}
+
+/* Icons */
+.scroll-button i,
+.whatsapp-button i {
+    font-size: 1.2em;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .whatsapp-button,
+    .scroll-button {
+        width: 35px;
+        height: 35px;
+        font-size: 1em;
+    }
+
+    .whatsapp-text {
+        font-size: 0.7em;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .whatsapp-button,
+    .scroll-button {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2em;
+    }
+
+    .whatsapp-text {
+        font-size: 0.8em;
+    }
+}
+
+@media (min-width: 1025px) {
+    .whatsapp-button,
+    .scroll-button {
+        width: 45px;
+        height: 45px;
+        font-size: 1.4em;
+    }
+
+    .whatsapp-text {
+        font-size: 0.9em;
+    }
+}

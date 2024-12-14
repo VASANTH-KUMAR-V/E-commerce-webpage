@@ -1,0 +1,40 @@
+/*** featurs Start ***/
+.featurs .featurs-item .featurs-icon {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    background-color: #FFB524;
+}
+
+.featurs .featurs-item .featurs-icon::after {
+    
+    content: "";
+    width: 35px;
+    height: 35px;
+    background: var(--bs-secondary);
+    position: absolute;
+    bottom: -10px;
+    left: 50%; /* Added to center the square */
+    transform: translateX(-50%) rotate(45deg); /* Added translateX(-50%) to center it */
+    background-color: #FFB524;
+}
+
+.featurs .fa-phone-alt {
+    margin-top: 30px; /* Adjust the value to move the icon down */
+}
+.featurs .fa-car-side {
+    margin-top: 30px; /* Adjust the value to move the icon down */
+}
+.featurs .fa-user-shield {
+    margin-top: 30px; /* Adjust the value to move the icon down */
+}
+
+.text3{
+    padding: 70px 50px;
+    
+}
+
+.featurs-content{
+    padding-top: 10%;
+}
+/*** featurs End ***/
