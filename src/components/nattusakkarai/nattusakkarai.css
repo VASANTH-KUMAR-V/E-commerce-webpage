@@ -1,66 +1,95 @@
+/* General Styles for the Banner */
 .banner {
-    background-color: #45595B; /* Background color */
-    margin-top: 40px; /* Adjust top margin */
-    margin-bottom: 40px; /* Adjust bottom margin */
-    padding: 20px; /* Add padding */
-    color: #ffffff; /* Text color */
-    display: flex; /* Use flexbox for centering */
-    flex-direction: column; /* Align items in a column */
-    align-items: center; /* Center items horizontally */
-    justify-content: center; /* Center items vertically */
-    text-align: center; /* Center text */
+    background-color: #45595B; /* Dark background */
+    margin: 40px 0; /* Vertical margin */
+    padding: 20px; /* Add padding inside */
+    color: #ffffff; /* White text color */
+    display: flex; /* Flexbox layout */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center align horizontally */
+    justify-content: center; /* Center align vertically */
+    text-align: center; /* Center text alignment */
+    border-radius: 15px; /* Rounded edges for the banner */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow */
 }
 
 .banner h1.display-3 {
-    font-size: 2.5em; /* Font size for h1 */
-    margin-bottom: 20px; /* Margin below h1 */
+    font-size: 2.5em; /* Large heading size */
+    margin-bottom: 20px; /* Space below the heading */
+    font-family: 'Trebuchet MS', Arial, sans-serif; /* Font style */
+    color: #FFB524; /* Golden yellow text */
 }
 
 .banner p.display-3 {
-    font-size: 2em; /* Font size for p */
-    margin-bottom: 20px; /* Margin below p */
+    font-size: 2em; /* Slightly smaller than h1 */
+    margin-bottom: 20px; /* Space below paragraph */
+    font-family: 'Trebuchet MS', Arial, sans-serif; /* Font style */
+    color: #FFB524; /* Golden yellow text */
 }
 
 .banner p {
-    font-size: 1em; /* Font size for p */
+    font-size: 1em; /* Default paragraph size */
+    margin-bottom: 10px; /* Space below */
 }
 
+/* Price Styling */
+.banner p.mb-4:last-child {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #81C408; /* Green for price */
+}
+
+/* Button Styles */
 .banner-btn {
-    background-color: #81C408; /* Button background color */
-    color: #e1e1e1; /* Button text color */
+    background-color: #81C408; /* Green background */
+    color: #e1e1e1; /* Light text */
     padding: 10px 20px; /* Button padding */
-    border-radius: 30px; /* Rounded button */
-    transition: background-color 0.3s ease; /* Smooth transition */
-    display: inline-block; /* Keep the button inline */
-    margin-top: 20px; /* Space above the button */
+    border-radius: 30px; /* Rounded edges */
+    transition: all 0.3s ease; /* Smooth hover effects */
+    display: inline-block; /* Inline-block button */
+    margin-top: 20px; /* Space above button */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Bold text */
 }
 
 .banner-btn:hover {
-    background-color: #FFB524; /* Button background color on hover */
-    color: #fff; /* Button text color on hover */
+    background-color: #FFB524; /* Change to golden yellow */
+    color: #ffffff; /* White text */
+    transform: scale(1.05); /* Slightly increase size */
 }
 
-.display-3 {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    color: #FFB524;
+/* Image Styling */
+.banner img {
+    width: 322px; /* Fixed width */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Shadow effect */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
+    filter: brightness(95%); /* Slight dimming for better focus */
+}
+
+.banner img:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4); /* Stronger shadow on hover */
+    filter: brightness(105%); /* Brighten on hover */
 }
 
 /* Responsive Styles */
 @media (max-width: 768px) {
     .banner {
-        padding: 10px; /* Reduce padding */
+        padding: 10px; /* Reduced padding */
     }
 
-    .banner h1.display-3 {
-        font-size: 1.5em; /* Reduce font size for mobile */
-    }
-
+    .banner h1.display-3,
     .banner p.display-3 {
-        font-size: 1.2em; /* Reduce font size for mobile */
+        font-size: 1.5em; /* Smaller font size for mobile */
     }
 
     .banner p {
-        font-size: 0.9em; /* Reduce font size for mobile */
+        font-size: 0.9em; /* Smaller text size */
+    }
+
+    .banner img {
+        width: 100%; /* Full width for smaller screens */
     }
 }
 
@@ -70,32 +99,20 @@
     }
 
     .banner h1.display-3 {
-        font-size: 2em; /* Adjust font size for tablets */
+        font-size: 2em; /* Medium heading size */
     }
 
     .banner p.display-3 {
-        font-size: 1.5em; /* Adjust font size for tablets */
+        font-size: 1.5em; /* Medium text size */
     }
 
-    .banner p {
-        font-size: 1em; /* Adjust font size for tablets */
+    .banner img {
+        width: 400px; /* Larger image for tablets */
     }
 }
 
 @media (min-width: 1025px) {
-    .banner {
-        padding: 20px; /* Default padding for laptops */
-    }
-
-    .banner h1.display-3 {
-        font-size: 2.5em; /* Default font size for laptops */
-    }
-
-    .banner p.display-3 {
-        font-size: 2em; /* Default font size for laptops */
-    }
-
-    .banner p {
-        font-size: 1em; /* Default font size for laptops */
+    .banner img {
+        width: 450px; /* Larger image for desktops */
     }
 }

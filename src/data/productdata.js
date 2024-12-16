@@ -8,6 +8,7 @@ import FaceCream from '../components/Assets/img/Face-cream.jpg';
 import FootButter from '../components/Assets/img/Foot-cream.jpg';
 import Kajal from '../components/Assets/img/Kajal.jpg';
 import LipBalm from '../components/Assets/img/lip-balm.jpg';
+import Nattusakkarai from '../components/Assets/img/nattu-sakkarai.jpg'
 
 
 export const products = {
@@ -122,6 +123,14 @@ export const products = {
       description2: '<strong>Ingredients </strong>: Beeswax, Virgin Coconut oil, Avacado oil, Amond oil, Cocobutter, Shea butter, Vitamin E oil, Alkanet Root.',
       longDescription: '<strong>Directions </strong>: Apply with your finger tips for smooth and moisitured lips. Use it regularly and as often as desired.',
     },
+"11": {
+    image: Nattusakkarai,  // Replace with actual path
+    title: 'Fresh Nattu Sakkarai',
+    category: 'Food',
+    price: '80.00',
+    priceSize: '(1KG)',
+    description: 'We are happy to inform you that we KRRS JAGGERY PRODUCERS are launching our traditional organic #ROYALBLEND jaggery powder is getting ready to make our sweets more sweeter and our celebrations more colourful.. so get ready to grab your orders now.. Dm for orders..'
+  },
     
   };
   
