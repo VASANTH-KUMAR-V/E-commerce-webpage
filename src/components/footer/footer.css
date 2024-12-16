@@ -45,10 +45,23 @@
   
   /* Hover state for links */
   .menu-items a:hover {
-    color: #81C408;
+    color: #f39c12;
     text-decoration: underline;
     text-decoration-thickness: 1px;
     text-underline-offset: 2px;
+    text-decoration-color: #81C408;
+  }
+
+  .footer-copyright {
+    /* Adjust the background color if needed */
+    background-color: #45595B;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .copyright-text {
+    font-size: 14px;
+    color: #81C408;
   }
   
   /* Mobile responsiveness */

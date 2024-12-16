@@ -55,7 +55,7 @@ const ProductPage = () => {
             className="btn-add-to-cart"
             onClick={() => addToCart(productId)} // Add product to cart
           >
-            Buy Now
+            Add to Cart
           </button>
         </div>
       </div>

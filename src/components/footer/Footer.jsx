@@ -56,12 +56,13 @@ function Footer() {
             </div>
           </div>
         </div>
-      </div>
-      <div className="footer-copyright">
+        <div className="footer-copyright">
         <p className="copyright-text">
           © {new Date().getFullYear()} Ollir Organics. All Rights Reserved.
         </p>
       </div>
+      </div>
+      
     </footer>
   );
 }

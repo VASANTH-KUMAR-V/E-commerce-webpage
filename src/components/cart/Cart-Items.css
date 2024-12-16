@@ -2,6 +2,7 @@
   padding: 20px;
   font-family: Arial, sans-serif;
   background-color: #f9f9f9;
+  margin-top: 5%;
 }
 
 /* Main Layout */
@@ -104,10 +105,93 @@ button:hover {
   margin: 0;
 }
 
-/* Mobile View */
+/* Checkout Dialog */
+.checkout-dialog {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.checkout-dialog-box {
+  background-color: #fff;
+  padding: 20px 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  max-width: 90%;
+  width: 400px;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.checkout-dialog-box h2 {
+  margin-bottom: 20px;
+  font-size: 22px;
+  color: #333;
+}
+
+.checkout-dialog-box input,
+.checkout-dialog-box textarea {
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.checkout-dialog-box button {
+  padding: 10px 20px;
+  margin: 10px 5px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.checkout-dialog-box button:first-child {
+  background-color: #28a745; /* Green for "Yes" */
+  color: #fff;
+}
+
+.checkout-dialog-box button:first-child:hover {
+  background-color: #218838; /* Darker green on hover */
+}
+
+.checkout-dialog-box button:last-child {
+  background-color: #dc3545; /* Red for "No" */
+  color: #fff;
+}
+
+.checkout-dialog-box button:last-child:hover {
+  background-color: #c82333; /* Darker red on hover */
+}
+
+/* Optional fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Responsive Layout Adjustments */
+
+/* Tablet View */
 @media (max-width: 768px) {
   .cartitems-format-main {
-    grid-template-columns: 1fr 2fr 2fr 1fr 1fr 1fr; /* Adjusted grid layout for smaller screens */
+    grid-template-columns: 1fr 2fr 2fr 1fr 1fr 1fr;
     text-align: center;
   }
 
@@ -154,10 +238,11 @@ button:hover {
   }
 }
 
-/* Extra small screens (mobile-first view) */
+/* Mobile View */
 @media (max-width: 480px) {
   .cartitems {
     padding: 15px;
+    margin-top: 20%;
   }
 
   .cartitems-format-main {
@@ -183,5 +268,14 @@ button:hover {
 
   button {
     padding: 10px 15px;
+  }
+
+  .checkout-dialog-box {
+    width: 90%; /* Adjust dialog box width for smaller screens */
+    padding: 15px 20px;
+  }
+
+  .checkout-dialog-box h2 {
+    font-size: 20px;
   }
 }
