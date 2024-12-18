@@ -2,39 +2,45 @@
 .banner {
     background-color: #45595B; /* Dark background */
     margin: 40px 0; /* Vertical margin */
-    padding: 20px; /* Add padding inside */
+    padding: 30px; /* Increased padding for more space */
     color: #ffffff; /* White text color */
     display: flex; /* Flexbox layout */
     flex-direction: column; /* Stack items vertically */
     align-items: center; /* Center align horizontally */
     justify-content: center; /* Center align vertically */
     text-align: center; /* Center text alignment */
-    border-radius: 15px; /* Rounded edges for the banner */
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); /* Stronger shadow */
+    overflow: hidden; /* Ensures content doesn't overflow */
 }
 
+/* Heading Styling */
 .banner h1.display-3 {
-    font-size: 2.5em; /* Large heading size */
+    font-size: 3em; /* Larger heading size */
     margin-bottom: 20px; /* Space below the heading */
     font-family: 'Trebuchet MS', Arial, sans-serif; /* Font style */
     color: #FFB524; /* Golden yellow text */
+    text-transform: uppercase; /* Makes the heading stand out */
+    letter-spacing: 2px; /* Add some spacing between letters */
 }
 
+/* Sub-heading Styling */
 .banner p.display-3 {
-    font-size: 2em; /* Slightly smaller than h1 */
+    font-size: 2.2em; /* Slightly smaller than h1 */
     margin-bottom: 20px; /* Space below paragraph */
     font-family: 'Trebuchet MS', Arial, sans-serif; /* Font style */
-    color: #FFB524; /* Golden yellow text */
+    color: #81C408; /* Golden yellow text */
 }
 
+/* Description Styling */
 .banner p {
     font-size: 1em; /* Default paragraph size */
     margin-bottom: 10px; /* Space below */
+    line-height: 1.6; /* Increase line height for better readability */
 }
 
 /* Price Styling */
 .banner p.mb-4:last-child {
-    font-size: 1.2em;
+    font-size: 1.3em; /* Larger size for price */
     font-weight: bold;
     color: #81C408; /* Green for price */
 }
@@ -43,76 +49,86 @@
 .banner-btn {
     background-color: #81C408; /* Green background */
     color: #e1e1e1; /* Light text */
-    padding: 10px 20px; /* Button padding */
+    padding: 12px 24px; /* Increased padding */
     border-radius: 30px; /* Rounded edges */
     transition: all 0.3s ease; /* Smooth hover effects */
     display: inline-block; /* Inline-block button */
     margin-top: 20px; /* Space above button */
     text-decoration: none; /* Remove underline */
     font-weight: bold; /* Bold text */
+    text-transform: uppercase; /* Uppercase text for the button */
+    border: 2px solid transparent; /* Transparent border initially */
 }
 
 .banner-btn:hover {
     background-color: #FFB524; /* Change to golden yellow */
     color: #ffffff; /* White text */
-    transform: scale(1.05); /* Slightly increase size */
+    transform: scale(1.1); /* Slightly increase size */
+    border-color: #FFB524; /* Add border on hover */
 }
 
 /* Image Styling */
 .banner img {
-    width: 322px; /* Fixed width */
+    width: 100%; /* Make image responsive */
+    max-width: 450px; /* Max width for larger screens */
     border-radius: 15px; /* Rounded corners */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Shadow effect */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3); /* Stronger shadow effect */
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
     filter: brightness(95%); /* Slight dimming for better focus */
+    object-fit: cover; /* Ensures proper aspect ratio */
 }
 
 .banner img:hover {
-    transform: scale(1.05); /* Slight zoom on hover */
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4); /* Stronger shadow on hover */
-    filter: brightness(105%); /* Brighten on hover */
+    transform: scale(1.1); /* Zoom effect on hover */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4); /* Stronger shadow on hover */
+    filter: brightness(110%); /* Brighten on hover */
 }
 
 /* Responsive Styles */
 @media (max-width: 768px) {
     .banner {
-        padding: 10px; /* Reduced padding */
+        padding: 15px; /* Reduced padding on smaller screens */
     }
 
     .banner h1.display-3,
     .banner p.display-3 {
-        font-size: 1.5em; /* Smaller font size for mobile */
+        font-size: 1.8em; /* Smaller font size for mobile */
     }
 
     .banner p {
         font-size: 0.9em; /* Smaller text size */
     }
 
+    .banner-btn {
+        padding: 10px 18px; /* Adjust button size */
+        font-size: 16px; /* Smaller font for the button */
+    }
+
     .banner img {
-        width: 100%; /* Full width for smaller screens */
+        max-width: 100%; /* Full width for smaller screens */
     }
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
     .banner {
-        padding: 15px; /* Adjust padding for tablets */
+        padding: 20px; /* Adjust padding for tablets */
     }
 
     .banner h1.display-3 {
-        font-size: 2em; /* Medium heading size */
+        font-size: 2.5em; /* Medium heading size */
     }
 
     .banner p.display-3 {
-        font-size: 1.5em; /* Medium text size */
+        font-size: 2em; /* Medium text size */
     }
 
     .banner img {
-        width: 400px; /* Larger image for tablets */
+        max-width: 400px; /* Larger image for tablets */
     }
 }
 
 @media (min-width: 1025px) {
     .banner img {
-        width: 450px; /* Larger image for desktops */
+        max-width: 450px; /* Larger image for desktops */
     }
 }

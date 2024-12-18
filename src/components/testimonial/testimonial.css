@@ -15,14 +15,23 @@
   border: 2px solid #619b15;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(190, 38, 38, 0.1);
-  transition: transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
   text-align: center;
   background-color: #F8F9FA;
+  opacity: 0;
+  transform: translateX(50px);
 }
 
 .testimonial-item.active {
-  transform: scale(1.05);
+  transform: scale(1.05) translateX(0); /* Scale and slide into position */
+  opacity: 1; /* Make the item visible */
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.testimonial-controls {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
 }
 
 .testimonial-item h4 {

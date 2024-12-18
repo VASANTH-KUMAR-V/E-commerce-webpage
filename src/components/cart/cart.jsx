@@ -174,7 +174,7 @@ const CartItems = () => {
       {showDialog && (
         <div className="checkout-dialog">
           <div className="checkout-dialog-box">
-            <h2>Enter Your Details</h2>
+            <h2>Shipping Details</h2>
             <input
               type="text"
               name="name"

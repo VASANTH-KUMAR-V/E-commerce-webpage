@@ -1,40 +1,123 @@
-/*** featurs Start ***/
-.featurs .featurs-item .featurs-icon {
+/*** Features Start ***/
+.features {
+    padding: 50px 0;
+  }
+  
+  .features .features-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    padding: 30px;
+    background-color: #f8f9fa;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .features .features-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .features .features-item .features-icon {
     position: relative;
     width: 120px;
     height: 120px;
     background-color: #FFB524;
-}
-
-.featurs .featurs-item .featurs-icon::after {
-    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin-bottom: 15px;
+  }
+  
+  .features .features-item .features-icon::after {
     content: "";
     width: 35px;
     height: 35px;
-    background: var(--bs-secondary);
+    background: #FFB524; /* Same as the icon background color */
     position: absolute;
     bottom: -10px;
-    left: 50%; /* Added to center the square */
-    transform: translateX(-50%) rotate(45deg); /* Added translateX(-50%) to center it */
-    background-color: #FFB524;
-}
-
-.featurs .fa-phone-alt {
-    margin-top: 30px; /* Adjust the value to move the icon down */
-}
-.featurs .fa-car-side {
-    margin-top: 30px; /* Adjust the value to move the icon down */
-}
-.featurs .fa-user-shield {
-    margin-top: 30px; /* Adjust the value to move the icon down */
-}
-
-.text3{
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg); /* Positioning and rotation of the square */
+  }
+  
+  .features .fa-phone-alt,
+  .features .fa-car-side,
+  .features .fa-user-shield {
+    font-size: 2.5rem;
+    color: white;
+  }
+  
+  .features .features-content {
+    text-align: center;
+    padding-top: 15px;
+  }
+  
+  .features .features-content h5 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin: 10px 0;
+  }
+  
+  .features .features-content p {
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  /* Text Section */
+  .text2 {
     padding: 70px 50px;
-    
-}
-
-.featurs-content{
-    padding-top: 10%;
-}
-/*** featurs End ***/
+    text-align: center;
+    font-size: 2.5rem;
+    color: #FFB524;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .features .features-item {
+      padding: 20px;
+    }
+  
+    .features .features-item .features-icon {
+      width: 100px;
+      height: 100px;
+    }
+  
+    .features .features-content h5 {
+      font-size: 1.125rem;
+    }
+  
+    .features .features-content p {
+      font-size: 0.875rem;
+    }
+  
+    .text2 {
+      font-size: 2rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .features .features-item {
+      padding: 15px;
+    }
+  
+    .features .features-item .features-icon {
+      width: 90px;
+      height: 90px;
+    }
+  
+    .features .features-content h5 {
+      font-size: 1rem;
+    }
+  
+    .features .features-content p {
+      font-size: 0.75rem;
+    }
+  
+    .text2 {
+      font-size: 1.5rem;
+    }
+  }
+  /*** Features End ***/
+  

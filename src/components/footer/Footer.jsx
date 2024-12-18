@@ -22,16 +22,16 @@ function Footer() {
             <div className="menu-items">
               <h5>Our Products</h5>
               <li>
-                <a href="#">Home</a>
+                <a href="/">Home</a>
               </li>
               <li>
-                <a href="#">Cart</a>
+                <a href="/cart">Cart</a>
               </li>
               <li>
-                <a href="#">Products</a>
+                <a href="">Products</a>
               </li>
               <li>
-                <a href="#">Nattusakkarai</a>
+                <a href="#nattu-sakkarai">Nattusakkarai</a>
               </li>
             </div>
 

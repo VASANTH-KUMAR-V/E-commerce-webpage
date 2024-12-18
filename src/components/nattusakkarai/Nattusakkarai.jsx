@@ -16,30 +16,28 @@ function Banner() {
 
   return (
     <div className="container-fluid banner my-5" id="nattu-sakkarai">
-      <div>
-        <div className="row g-4 align-items-center">
-          <div className="col-lg-6">
-            <div className="py-4">
-              <h1 className="display-3">{product.title}</h1>
-              <p className="fw-normal display-3 text-white mb-4">in Our Store</p>
-              <p className="mb-4">
-                {product.description}
-              </p>
-              <p className="mb-4">Price: ₹{product.price} {product.priceSize}</p>
-              <button className="banner-btn" onClick={handleAddToCart}>
-                ADD TO CART
-              </button>
-            </div>
+      <div className="row g-4 align-items-center">
+        {/* Text and Product Info */}
+        <div className="col-lg-6">
+          <div className="py-4 banner-text">
+            <h1 className="display-3">{product.title}</h1>
+            <p className="fw-normal display-3  mb-4">in Our Store</p>
+            <p className="mb-4 ">{product.description}</p>
+            <p className="mb-4 ">Price: ₹{product.price} {product.priceSize}</p>
+            <button className="banner-btn" onClick={handleAddToCart}>
+              ADD TO CART
+            </button>
           </div>
-          <div className="col-lg-6">
-            <div className="position-relative">
-              <img
-                src={product.image}
-                className="img-fluid"
-                alt={product.title}
-                style={{ width: 322 }}
-              />
-            </div>
+        </div>
+
+        {/* Product Image */}
+        <div className="col-lg-6">
+          <div className="position-relative banner-img">
+            <img
+              src={product.image}
+              className="img-fluid product-img"
+              alt={product.title}
+            />
           </div>
         </div>
       </div>
