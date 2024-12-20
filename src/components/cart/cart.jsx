@@ -1,8 +1,8 @@
 import React, { useContext, useState } from "react";
 import { ShopContext } from "../../Context/ShopContext";
-import DeleteIcon from '@mui/icons-material/Delete';
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
+import DeleteIcon from '@mui/icons-material/Delete';
 import "./Cart-Items.css";
 
 const CartItems = () => {
@@ -18,8 +18,6 @@ const CartItems = () => {
   const [error, setError] = useState("");
   const [orderId, setOrderId] = useState("");
 
-  const shippingFee = 49;
-
   // Generate Order ID in format 000001-YYYYMMDD
   const generateOrderId = () => {
     const datePart = new Date().toISOString().slice(0, 10).replace(/-/g, ""); // YYYYMMDD
@@ -28,8 +26,21 @@ const CartItems = () => {
   };
 
   const handleProceedToCheckout = () => {
-    setError(""); // Clear previous errors
-    setOrderId(generateOrderId()); // Generate order ID
+    // Check if cart is empty
+    if (Object.keys(cartItems).filter(itemId => cartItems[itemId] > 0).length === 0) {
+      setError("Your cart is empty. Please add products to proceed.");
+      return;
+    }
+
+    // Check if subtotal is ₹0.00
+    if (getTotalCartAmount() === 0) {
+      setError("Subtotal is ₹0.00. Please add products to your cart.");
+      return;
+    }
+
+    // Reset error and proceed to checkout
+    setError("");
+    setOrderId(generateOrderId());
     setShowDialog(true);
   };
 
@@ -83,11 +94,11 @@ const CartItems = () => {
       .join("\n");
 
     const subtotal = getTotalCartAmount();
-    const total = (parseFloat(subtotal) || 0) + shippingFee;
+    const total = (parseFloat(subtotal) || 0);
 
     return `${cartSummary}\n\nSubtotal: ₹${(parseFloat(subtotal) || 0).toFixed(
       2
-    )}\nShipping Fee: ₹${shippingFee}\nTotal: ₹${total.toFixed(2)}`;
+    )}\nTotal: ₹${total.toFixed(2)} + Shipping fee`;
   };
 
   const formatAmount = (amount) => {
@@ -105,7 +116,6 @@ const CartItems = () => {
         <p>Price</p>
         <p>Quantity</p>
         <p>Total</p>
-        <p>Remove</p>
       </div>
       <hr />
       {Object.keys(cartItems).map((itemId) => {
@@ -124,22 +134,33 @@ const CartItems = () => {
                 <p>{product.title}</p>
                 <p>₹{product.price}</p>
                 <div className="cartitems-quantity">
-                  <RemoveIcon
-                    onClick={() => removeFromCart(itemId)}
-                    style={{ cursor: "pointer", marginRight: "10px" }}
-                  />
-                  <span>{quantity}</span>
-                  <AddIcon
-                    onClick={() => addToCart(itemId)}
-                    style={{ cursor: "pointer", marginLeft: "10px" }}
-                  />
+                  {quantity === 1 ? (
+                    <>
+                      <DeleteIcon
+                        onClick={() => removeFromCart(itemId)}
+                        style={{ cursor: "pointer", marginRight: "10px" }}
+                      />
+                      <span>{quantity}</span>
+                      <AddIcon
+                        onClick={() => addToCart(itemId)}
+                        style={{ cursor: "pointer", marginLeft: "10px" }}
+                      />
+                    </>
+                  ) : (
+                    <>
+                      <RemoveIcon
+                        onClick={() => removeFromCart(itemId)}
+                        style={{ cursor: "pointer", marginRight: "10px" }}
+                      />
+                      <span>{quantity}</span>
+                      <AddIcon
+                        onClick={() => addToCart(itemId)}
+                        style={{ cursor: "pointer", marginLeft: "10px" }}
+                      />
+                    </>
+                  )}
                 </div>
                 <p>₹{formatAmount(quantity * parseFloat(product.price))}</p>
-                <DeleteIcon
-                  className="cartitems-remove-icon"
-                  onClick={() => removeFromCart(itemId)}
-                  style={{ cursor: "pointer" }}
-                />
               </div>
               <hr />
             </div>
@@ -157,16 +178,20 @@ const CartItems = () => {
             </div>
             <hr />
             <div className="cartitems-total-item">
-              <p>Shipping fee</p>
-              <p>₹{shippingFee}</p>
-            </div>
-            <hr />
-            <div className="cartitems-total-item">
               <p>Total</p>
-              <p>₹{formatAmount(getTotalCartAmount() + shippingFee)}</p>
+              <p>₹{formatAmount(getTotalCartAmount())}</p>
             </div>
           </div>
-          <button onClick={handleProceedToCheckout}>Proceed to checkout</button>
+          {error && <p className="error-message">{error}</p>}
+          <button
+            onClick={handleProceedToCheckout}
+            disabled={
+              Object.keys(cartItems).filter((itemId) => cartItems[itemId] > 0)
+                .length === 0 || getTotalCartAmount() === 0
+            }
+          >
+            Proceed to checkout
+          </button>
         </div>
       </div>
 
@@ -174,7 +199,12 @@ const CartItems = () => {
       {showDialog && (
         <div className="checkout-dialog">
           <div className="checkout-dialog-box">
-            <h2>Shipping Details</h2>
+            <h2>Billing Details</h2>
+            <p>Order ID: {orderId}</p>
+            <textarea
+              readOnly
+              value={generateCartSummary()}
+            />
             <input
               type="text"
               name="name"

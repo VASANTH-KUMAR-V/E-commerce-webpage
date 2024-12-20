@@ -131,7 +131,7 @@ const ProductCard = () => {
   return (
     <div className="product-container" id="Product-card">
       <Hero />
-      <h2 className="heading">Our Products</h2>
+      <h2 className="heading" id="products-heading">Our Products</h2>
       <div className="product-filters" id="product-filters">
         <button
           className="filter-btn all-products"
@@ -184,7 +184,6 @@ const ProductCard = () => {
       </div>
       <Nattusakkarai />
       <Features />
-
       <Testimonial />
     </div>
   );

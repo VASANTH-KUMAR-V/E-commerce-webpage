@@ -16,7 +16,7 @@
     transition: transform 0.2s, box-shadow 0.2s;
     width: 250px;
     text-align: center;
-    padding: 20px;
+    padding: 10px;
 }
 
 .product-card:hover {
@@ -26,8 +26,13 @@
 
 .heading{
     
-    margin-top: 5%;
-    color: #FFB524;
+    font-size: 3em; /* Larger heading size */
+    margin-top: 50px; /* Space below the heading */
+    margin-bottom:0px; /* Space below the heading */
+    font-family: 'Trebuchet MS', Arial, sans-serif; /* Font style */
+    color: #FFB524; /* Golden yellow text */
+    text-transform: uppercase; /* Makes the heading stand out */
+    letter-spacing: 2px; /* Add some spacing between letters */
     text-align: center;
 }
 /* Hover-Zoom Effect for Product Images */

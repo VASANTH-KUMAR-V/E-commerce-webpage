@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom"; // Import Link from React Router
 import "./footer.css"; // Ensure the path is correct
 
 function Footer() {
@@ -22,29 +23,41 @@ function Footer() {
             <div className="menu-items">
               <h5>Our Products</h5>
               <li>
-                <a href="/">Home</a>
+                <Link to="/">Home</Link>
               </li>
               <li>
-                <a href="/cart">Cart</a>
+                <Link to="/cart">Cart</Link>
               </li>
               <li>
-                <a href="">Products</a>
+                <a href="#products-heading">Products</a> {/* External anchor link */}
               </li>
               <li>
-                <a href="#nattu-sakkarai">Nattusakkarai</a>
+                <a href="#nattu-sakkarai">Nattusakkarai</a> {/* External anchor link */}
               </li>
             </div>
 
             <div className="menu-items">
               <h5>Reach Us</h5>
               <li>
-                <a href="#">Instagram</a>
+                <a
+                  href="https://www.instagram.com/ollirorganics?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Instagram
+                </a>
               </li>
               <li>
-                <a href="#">Whatsapp</a>
+                <a
+                  href="https://api.whatsapp.com/send?phone=919363620057&text=For%20Orders"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Whatsapp
+                </a>
               </li>
               <li>
-                <a href="#">Email</a>
+                <a href="mailto:ollirorganics@gmail.com">Email</a>
               </li>
             </div>
             <div className="menu-items">
@@ -57,12 +70,11 @@ function Footer() {
           </div>
         </div>
         <div className="footer-copyright">
-        <p className="copyright-text">
-          © {new Date().getFullYear()} Ollir Organics. All Rights Reserved.
-        </p>
+          <p className="copyright-text">
+            © {new Date().getFullYear()} Ollir Organics. All Rights Reserved.
+          </p>
+        </div>
       </div>
-      </div>
-      
     </footer>
   );
 }

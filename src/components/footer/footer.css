@@ -1,3 +1,7 @@
+html {
+  scroll-padding-top: 80px; /* Adjust this value based on your navbar height */
+}
+
 .container-footer {
     width: 100%;
     margin: 0 auto;
@@ -63,6 +67,7 @@
     font-size: 14px;
     color: #81C408;
   }
+
   
   /* Mobile responsiveness */
   @media (max-width: 768px) {
