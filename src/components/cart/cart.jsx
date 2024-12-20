@@ -160,7 +160,7 @@ const CartItems = () => {
                     </>
                   )}
                 </div>
-                <p>₹{formatAmount(quantity * parseFloat(product.price))}</p>
+                <p className="hide">₹{formatAmount(quantity * parseFloat(product.price))}</p>
               </div>
               <hr />
             </div>
