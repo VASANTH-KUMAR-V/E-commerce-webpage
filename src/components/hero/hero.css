@@ -15,6 +15,8 @@ background-repeat: no-repeat;
     justify-content: center;
     text-align: left;
     padding: 20px;
+    padding-top: 80px;  /* Adjust this value based on your navbar's height */
+    margin-top: 60px; 
     position: relative; /* Added for positioning of elements */
 }
 

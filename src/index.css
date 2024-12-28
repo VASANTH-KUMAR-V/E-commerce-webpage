@@ -11,3 +11,8 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+/* Ensure content below navbar is not hidden */
+.page-content {
+  padding-top: 80px;  /* Adjust this value based on your navbar's height */
+  margin-top: 80px;   /* This will make sure the content does not overlap the navbar */
+}

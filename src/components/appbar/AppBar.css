@@ -1,0 +1,102 @@
+/* App Bar Styles */
+.custom-app-bar {
+    background-color: #81c408;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: fixed; /* Fix the navbar at the top */
+    top: 0;          /* Position it at the top */
+    left: 0;         /* Align to the left edge */
+    width: 100%;     /* Make it span the full width */
+    z-index: 1000;   /* Ensure it's above other elements */
+  }
+  /* Ensure content below navbar is not hidden */
+.page-content {
+    padding-top: 80px;  /* Adjust this value based on your navbar's height */
+    margin-top: 80px;   /* This will make sure the content does not overlap the navbar */
+  }
+  
+  
+  .toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 64px; /* Fixed height for the navbar */
+  }
+  
+  /* Title styles */
+  .app-bar-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+  }
+  
+  /* Navigation links container */
+  .nav-links {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  /* Button styles */
+  .nav-button {
+    color: #fff;
+    font-weight: 500;
+    text-transform: capitalize;
+    transition: color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .nav-button:hover {
+    color: #ffb524;
+    transform: scale(1.1);
+  }
+  
+  /* Scroll Top Button Styles */
+  .scroll-top-box {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    background-color: transparent;
+    cursor: pointer;
+  }
+  
+  .scroll-top-button {
+    background-color: #81c408;
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .scroll-top-button:hover {
+    background-color: #ffb524;
+    transform: scale(1.1);
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .nav-links {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+  
+    .app-bar-title {
+      font-size: 1.25rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .app-bar-title {
+      font-size: 1rem;
+    }
+  
+    .nav-links {
+      gap: 0.25rem;
+    }
+  
+    .nav-button {
+      font-size: 0.9rem;
+    }
+  }
+  
+  /* Ensure page content does not hide under navbar */
+  .page-content {
+    padding-top: 80px; /* Push content down to prevent overlap */
+  }
+  

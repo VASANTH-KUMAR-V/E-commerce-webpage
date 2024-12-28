@@ -13,7 +13,7 @@ const App = () => {
       <Router>
         <Header />
         <Routes>
-          <Route path="/cart" element={<CartItems />} /> {/* No need to wrap with ShopContextProvider again */}
+          <Route path="/cart" element={<CartItems />} /> 
           <Route path="/" element={<Productcard />} />
           <Route path="/product/:productId" element={<Productpage />} />
         </Routes>

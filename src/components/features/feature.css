@@ -24,23 +24,7 @@
   width: 120px;
   height: 120px;
   background: rgb(253, 252, 251);
-  background: -moz-linear-gradient(
-    90deg,
-    rgb(248, 180, 111) 30%,
-    rgba(194, 241, 145, 0.770920868347339) 100%
-  );
-  background: -webkit-linear-gradient(
-    90deg,
-    rgb(248, 180, 111) 30%,
-    rgba(194, 241, 145, 0.770920868347339) 100%
-  );
-  background: linear-gradient(
-    90deg,
-    rgb(248, 180, 111) 30%,
-    rgba(194, 241, 145, 0.770920868347339) 100%
-  );
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#fdfcfb",endColorstr="#c2f191",GradientType=1);
-
+  background: #ffb624e7;
   display: flex;
   align-items: center;
   justify-content: center;

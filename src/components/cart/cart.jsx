@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { ShopContext } from "../../Context/ShopContext";
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
@@ -15,6 +15,7 @@ const CartItems = () => {
     contact: "",
     address: "",
   });
+
   const [error, setError] = useState("");
   const [orderId, setOrderId] = useState("");
 
@@ -96,9 +97,8 @@ const CartItems = () => {
     const subtotal = getTotalCartAmount();
     const total = (parseFloat(subtotal) || 0);
 
-    return `${cartSummary}\n\nSubtotal: ₹${(parseFloat(subtotal) || 0).toFixed(
-      2
-    )}\nTotal: ₹${total.toFixed(2)} + Shipping fee`;
+    // Return without subtotal for the dialog box
+    return `${cartSummary}\n\nTotal: ₹${total.toFixed(2)} + Shipping fee`;
   };
 
   const formatAmount = (amount) => {
@@ -107,6 +107,11 @@ const CartItems = () => {
       maximumFractionDigits: 2,
     }).format(amount);
   };
+
+  // Scroll to top when the component is mounted
+  useEffect(() => {
+    window.scrollTo(0, 0); // Scroll to top after component renders
+  }, []); // Runs only once when the component mounts
 
   return (
     <div className="cartitems">
@@ -201,10 +206,7 @@ const CartItems = () => {
           <div className="checkout-dialog-box">
             <h2>Billing Details</h2>
             <p>Order ID: {orderId}</p>
-            <textarea
-              readOnly
-              value={generateCartSummary()}
-            />
+            <pre>{generateCartSummary()}</pre> {/* Display cart summary as text */}
             <input
               type="text"
               name="name"
@@ -228,7 +230,7 @@ const CartItems = () => {
             {error && <p className="error-message">{error}</p>}
             <p>Move to Whatsapp for Payment details?</p>
             <button onClick={() => handleAlertResponse("yes")}>Yes</button>
-            <button onClick={() => handleAlertResponse("no")}>No</button>
+            <button onClick={() => handleAlertResponse("no")} className="danger-button">No</button> {/* Added class for styling */}
           </div>
         </div>
       )}

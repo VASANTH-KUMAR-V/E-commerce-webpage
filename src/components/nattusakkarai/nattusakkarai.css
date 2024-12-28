@@ -84,6 +84,25 @@
     filter: brightness(110%); /* Brighten on hover */
 }
 
+#nattu-sakkarai {
+    margin-bottom: 1rem; /* Equivalent to mb-4 (Bootstrap) */
+    font-size: 1rem; /* Default font size */
+    color: #f9f6f6; /* Text color */
+  }
+  
+  /* Style for the <span> inside the paragraph */
+  #nattu-sakkarai span {
+    font-weight: 500; /* Medium font weight */
+    color: #81C408; /* Custom green text color */
+    font-size: 1.1rem; /* Slightly larger font size for span */
+  }
+  
+  /* Hover effect for span text */
+  #nattu-sakkarai span:hover {
+    color: #FFB524; /* Change text color on hover */
+    cursor: pointer; /* Pointer cursor on hover */
+  }
+
 /* Responsive Styles */
 @media (max-width: 768px) {
     .banner {

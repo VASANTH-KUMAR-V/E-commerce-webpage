@@ -10,7 +10,7 @@ function Footer() {
           <div>
             <h2>Ollir Organics</h2>
             <h6>Natural Products</h6>
-            <hr></hr>
+            <hr />
           </div>
           <div className="menu">
             <div className="menu-items">
@@ -22,44 +22,49 @@ function Footer() {
             </div>
             <div className="menu-items">
               <h5>Our Products</h5>
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <Link to="/cart">Cart</Link>
-              </li>
-              <li>
-                <a href="#products-heading">Products</a> {/* External anchor link */}
-              </li>
-              <li>
-                <a href="#nattu-sakkarai">Nattusakkarai</a> {/* External anchor link */}
-              </li>
+              <ul> {/* Added ul to wrap li items */}
+                <li>
+                  <Link to="/">Home</Link>
+                </li>
+                <li>
+                  <Link to="/cart">Cart</Link>
+                </li>
+                <li>
+                  <Link to="#products-heading">Products</Link> {/* Changed to Link */}
+                </li>
+                <li>
+                  <Link to="#nattu-sakkarai">Nattusakkarai</Link> {/* Changed to Link */}
+                </li>
+              </ul>
             </div>
 
             <div className="menu-items">
               <h5>Reach Us</h5>
-              <li>
-                <a
-                  href="https://www.instagram.com/ollirorganics?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Instagram
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://api.whatsapp.com/send?phone=919363620057&text=For%20Orders"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Whatsapp
-                </a>
-              </li>
-              <li>
-                <a href="mailto:ollirorganics@gmail.com">Email</a>
-              </li>
+              <ul> {/* Added ul to wrap li items */}
+                <li>
+                  <a
+                    href="https://www.instagram.com/ollirorganics?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Instagram
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://api.whatsapp.com/send?phone=919363620057&text=For%20Orders"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Whatsapp
+                  </a>
+                </li>
+                <li>
+                  <a href="mailto:ollirorganics@gmail.com">Email</a>
+                </li>
+              </ul>
             </div>
+
             <div className="menu-items">
               <h5>Contact</h5>
               <p>

@@ -119,6 +119,19 @@ button:hover {
   border-radius: 5px;
   font-size: 16px;
 }
+/* Add this CSS in your Cart-Items.css or relevant CSS file */
+.danger-button {
+  background-color: #e74c3c; /* Red for danger */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.danger-button:hover {
+  background-color: #c0392b; /* Darker red on hover */
+}
+
 
 /* Responsive Layout Adjustments */
 

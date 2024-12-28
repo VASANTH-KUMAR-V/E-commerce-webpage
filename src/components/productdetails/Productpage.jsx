@@ -1,14 +1,17 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { ShopContext } from '../../Context/ShopContext'; // Import your context
+import { ShopContext } from '../../Context/ShopContext';
 import { products } from '../../data/productdata';
 import './productpage.css';
 
 const ProductPage = () => {
   const { productId } = useParams();
-  const { addToCart } = useContext(ShopContext); // Get addToCart from context
-  
-  // Directly accessing the product by its ID
+  const { addToCart } = useContext(ShopContext);
+
+  useEffect(() => {
+    window.scrollTo(0, 0); // Scroll to top after component renders
+  }, []); // Runs only once when the component mounts
+
   const product = products[productId];
 
   if (!product) {
@@ -18,9 +21,11 @@ const ProductPage = () => {
   const renderStars = (rating) => {
     const stars = [];
     for (let i = 0; i < 5; i++) {
-      stars.push(i < rating 
-        ? <i key={i} className="fas fa-star" style={{ color: '#ffc107' }}></i> 
-        : <i key={i} className="far fa-star" style={{ color: '#ffc107' }}></i>);
+      stars.push(
+        i < rating
+          ? <i key={i} className="fas fa-star" style={{ color: '#ffc107' }}></i>
+          : <i key={i} className="far fa-star" style={{ color: '#ffc107' }}></i>
+      );
     }
     return stars;
   };
@@ -38,25 +43,14 @@ const ProductPage = () => {
           <h1 className="product-title">{title}</h1>
           <p className="product-category">{category}</p>
           <p className="product-price">
-            ₹{price} 
-            <span className="product-price-size">
-              {priceSize}
-            </span>
+            ₹{price} <span className="product-price-size">{priceSize}</span>
           </p>
-          
-          <div className="product-rating">
-            {renderStars(rating)}
-          </div>
+          <div className="product-rating">{renderStars(rating)}</div>
           <p className="product-description" dangerouslySetInnerHTML={{ __html: description1 }}></p>
           <p className="product-description" dangerouslySetInnerHTML={{ __html: description2 }}></p>
           <p className="product-description" dangerouslySetInnerHTML={{ __html: longDescription }}></p>
-          
-          <button
-            className="btn-add-to-cart"
-            onClick={() => addToCart(productId)} // Add product to cart
-          >
-            Add to Cart
-          </button>
+          <button className="btn-add-to-cart" onClick={() => addToCart(productId)}><i className="fas fa-shopping-cart"></i> Add to Cart</button>
+
         </div>
       </div>
     </div>

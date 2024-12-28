@@ -1,4 +1,15 @@
 /* Reset some default styles */
+body {
+  margin: 0;
+  padding: 0;
+
+}
+
+.container-fluid {
+  padding: 0;
+  overflow: hidden; /* Remove scrollbars caused by parent elements */
+}
+
 body, h1, h3, p {
   margin: 0;
   padding: 0;
@@ -58,19 +69,38 @@ body, h1, h3, p {
   margin-bottom: 0.5rem;
 }
 
+/* Button Styling */
 .btn-add-to-cart {
-  background-color: #81C408;
-  color: #fff;
-  border: none;
-  padding: 0.5rem 1rem;
-  font-size: 1rem;
-  cursor: pointer;
-  border-radius: 0.25rem;
-  transition: background-color 0.3s ease;
+  display: flex; /* Use flex for alignment */
+  align-items: center; /* Align items vertically */
+  justify-content: center; /* Center content horizontally */
+  gap: 0.5rem; /* Space between icon and text */
+  padding: 0.75rem 1.5rem; /* Padding for size */
+  font-size: 1rem; /* Font size */
+  font-weight: bold; /* Bold text */
+  color: #fff; /* White text */
+  background-color: #81C408; /* Green background */
+  border: none; /* Remove default border */
+  border-radius: 0.5rem; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Light shadow effect */
+  transition: all 0.3s ease; /* Smooth transition for hover */
 }
 
+/* Hover effect */
 .btn-add-to-cart:hover {
-  background-color: #218838;
+  background-color: #218838; /* Darker green on hover */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
+}
+
+/* Icon inside the button */
+.btn-add-to-cart i {
+  font-size: 1.2rem; /* Icon size */
+}
+
+/* Active state */
+.btn-add-to-cart:active {
+  transform: scale(0.95); /* Slight scale effect on click */
 }
 
 .product-categories {
