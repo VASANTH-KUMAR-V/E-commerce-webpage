@@ -1,6 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom"; // Import Link from React Router
-import "./footer.css"; // Ensure the path is correct
+import { Link } from "react-router-dom";
+import "./footer.css";
 
 function Footer() {
   return (
@@ -22,7 +22,7 @@ function Footer() {
             </div>
             <div className="menu-items">
               <h5>Our Products</h5>
-              <ul> {/* Added ul to wrap li items */}
+              <ul>
                 <li>
                   <Link to="/">Home</Link>
                 </li>
@@ -30,17 +30,17 @@ function Footer() {
                   <Link to="/cart">Cart</Link>
                 </li>
                 <li>
-                  <Link to="#products-heading">Products</Link> {/* Changed to Link */}
+                  <a href="#products-heading">Products</a> {/* Fixed */}
                 </li>
                 <li>
-                  <Link to="#nattu-sakkarai">Nattusakkarai</Link> {/* Changed to Link */}
+                  <a href="#nattu-sakkarai">Nattusakkarai</a> {/* Fixed */}
                 </li>
               </ul>
             </div>
 
             <div className="menu-items">
               <h5>Reach Us</h5>
-              <ul> {/* Added ul to wrap li items */}
+              <ul>
                 <li>
                   <a
                     href="https://www.instagram.com/ollirorganics?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="

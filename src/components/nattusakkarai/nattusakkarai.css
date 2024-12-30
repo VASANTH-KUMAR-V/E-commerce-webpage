@@ -109,10 +109,10 @@
         padding: 15px; /* Reduced padding on smaller screens */
     }
 
-    .banner h1.display-3,
+   
+    } .banner h1.display-3,
     .banner p.display-3 {
         font-size: 1.8em; /* Smaller font size for mobile */
-    }
 
     .banner p {
         font-size: 0.9em; /* Smaller text size */

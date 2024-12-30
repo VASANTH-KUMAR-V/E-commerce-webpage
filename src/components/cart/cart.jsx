@@ -29,13 +29,7 @@ const CartItems = () => {
   const handleProceedToCheckout = () => {
     // Check if cart is empty
     if (Object.keys(cartItems).filter(itemId => cartItems[itemId] > 0).length === 0) {
-      setError("Your cart is empty. Please add products to proceed.");
-      return;
-    }
-
-    // Check if subtotal is ₹0.00
-    if (getTotalCartAmount() === 0) {
-      setError("Subtotal is ₹0.00. Please add products to your cart.");
+      alert("Your cart is empty. Please add products to proceed.");
       return;
     }
 
@@ -52,8 +46,22 @@ const CartItems = () => {
 
   const validateFields = () => {
     const { name, contact, address } = personalDetails;
-    if (!name.trim() || !contact.trim() || !address.trim()) {
-      setError("All fields are required.");
+    let errorMessage = "";
+
+    if (!name.trim()) {
+      errorMessage += "Name is required.\n";
+    }
+    if (!contact.trim()) {
+      errorMessage += "Contact number is required.\n";
+    } else if (!/^[6-9]\d{9}$/.test(contact)) { // Indian 10-digit phone number validation
+      errorMessage += "Invalid contact number. Please enter a 10-digit number.\n";
+    }
+    if (!address.trim()) {
+      errorMessage += "Address is required.\n";
+    }
+
+    if (errorMessage) {
+      setError(errorMessage);
       return false;
     }
     return true;
@@ -191,8 +199,7 @@ const CartItems = () => {
           <button
             onClick={handleProceedToCheckout}
             disabled={
-              Object.keys(cartItems).filter((itemId) => cartItems[itemId] > 0)
-                .length === 0 || getTotalCartAmount() === 0
+              Object.keys(cartItems).filter((itemId) => cartItems[itemId] > 0).length === 0 || getTotalCartAmount() === 0
             }
           >
             Proceed to checkout
@@ -229,7 +236,7 @@ const CartItems = () => {
             />
             {error && <p className="error-message">{error}</p>}
             <p>Move to Whatsapp for Payment details?</p>
-            <button onClick={() => handleAlertResponse("yes")}>Yes</button>
+            <button onClick={() => handleAlertResponse("yes")} className="sucess-button">Yes</button>
             <button onClick={() => handleAlertResponse("no")} className="danger-button">No</button> {/* Added class for styling */}
           </div>
         </div>

@@ -1,114 +1,186 @@
+/* Global Styles */
 html {
   scroll-padding-top: 80px; /* Adjust this value based on your navbar height */
+  scroll-behavior: smooth; /* Smooth scrolling for anchor links */
 }
 
+/* Footer Container */
 .container-footer {
-    width: 100%;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #45595B;
-    border: 1px solid #ddd;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .container-item h2 {
-    color: #81C408;
-    font-family: sans-serif;
-  }
-  
-  .container-item h6 {
-    color: #f39c12;
-    font-family: sans-serif;
-  }
-  
-  /* Flexbox for menu, already responsive in some cases */
-  .menu {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;  /* Allow wrapping in mobile */
-  }
-  
-  /* Menu items styling */
-  .menu-items h5 {
-    color: #81C408;
-  }
-  
-  .menu-items p {
-    color: rgba(255, 255, 255, .5);
-    flex-wrap: wrap;  /* Wrap text on mobile */
-  }
-  
-  .menu-items a {
-    text-decoration: none; 
-    color: rgba(255, 255, 255, .5);
-  }
-  
-  .menu-items li {
-    list-style-type: none;
-  }
-  
-  /* Hover state for links */
-  .menu-items a:hover {
-    color: #f39c12;
-    text-decoration: underline;
-    text-decoration-thickness: 1px;
-    text-underline-offset: 2px;
-    text-decoration-color: #81C408;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #45595B; /* Dark background */
+  border: 1px solid #ddd;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Header Titles */
+.container-item h2 {
+  color: #81C408;
+  font-family: sans-serif;
+}
+
+.container-item h6 {
+  color: #f39c12;
+  font-family: sans-serif;
+}
+
+/* Menu Layout */
+.menu {
+  display: flex;
+  justify-content: space-between; /* Even spacing between sections */
+  flex-wrap: wrap; /* Wrap items for smaller screens */
+  margin-top: 20px;
+}
+
+.menu-items {
+  flex: 1; /* Equal width for all sections */
+  min-width: 200px; /* Prevent shrinking too much */
+  margin: 10px; /* Spacing between items */
+}
+
+/* Section Titles */
+.menu-items h5 {
+  color: #81C408;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+/* List Styles */
+.menu-items ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none; /* Remove bullets */
+}
+
+.menu-items li {
+  margin-bottom: 8px;
+}
+
+/* Link Styles */
+.menu-items a {
+  text-decoration: none;
+  color: rgb(171, 176, 171);
+  font-size: 0.9rem;
+  transition: color 0.3s;
+}
+
+/* Hover Effect */
+.menu-items a:hover {
+  color: #f39c12;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1px;
+  text-decoration-color: #81C408;
+}
+
+/* Paragraph Styles */
+.menu-items p {
+  color: rgb(171, 176, 171);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* Footer Copyright Section */
+.footer-copyright {
+  background-color: #45595B; /* Match footer background */
+  padding: 10px;
+  text-align: center;
+}
+
+.copyright-text {
+  font-size: 14px;
+  color: #81C408;
+}
+
+/* ============================= */
+/* Responsive Design for 3 Views */
+/* ============================= */
+
+/* 1. Mobile Phones (upto 480px) */
+@media (max-width: 480px) {
+  .container-footer {
+    padding: 10px; /* Reduce padding for smaller screens */
   }
 
-  .footer-copyright {
-    /* Adjust the background color if needed */
-    background-color: #45595B;
-    padding: 10px;
+  .menu {
+    flex-direction: column; /* Stack sections vertically */
+    align-items: center; /* Center align the items */
+  }
+
+  .menu-items {
+    width: 100%; /* Full width for menu items */
     text-align: center;
   }
-  
-  .copyright-text {
-    font-size: 14px;
-    color: #81C408;
+
+  .menu-items h5 {
+    font-size: 1rem; /* Adjust font size */
+    padding: 8px 0;
   }
 
-  
-  /* Mobile responsiveness */
-  @media (max-width: 768px) {
-    .menu {
-      flex-direction: column;  /* Stack items vertically */
-      align-items: center;     /* Center items horizontally */
-    }
-  
-    .menu-items {
-      width: 100%;  /* Make menu items take full width */
-      text-align: center;  /* Center text */
-    }
-  
-    .menu-items h5 {
-      font-size: 1.2rem;  /* Slightly larger font on mobile */
-      margin-top: 10px;  /* Add padding on top and bottom */
-    }
-  
-    .menu-items p {
-      font-size: 0.9rem;  /* Smaller text for better fit */
-    }
-  
-    .menu-items a {
-      padding: 5px 0;
-      margin-top: 0;  /* Add spacing between links */
-    }
+  .menu-items p,
+  .menu-items a {
+    font-size: 0.8rem; /* Smaller font for tight spaces */
   }
-  
-  /* For very small screens (e.g., phones in portrait mode) */
-  @media (max-width: 480px) {
-    .container-footer {
-      padding: 10px;  /* Less padding on small screens */
-    }
-  
-    .menu-items h5 {
-      font-size: 1rem;  /* Even smaller font size */
-      padding: 8px 0;  /* Reduced padding for very small screens */
-    }
-  
-    .menu-items p {
-      font-size: 0.8rem;  /* Smaller text size for tight spaces */
-    }
+}
+
+/* 2. Tablets and Small Screens (481px - 768px) */
+@media (max-width: 768px) {
+  .menu {
+    flex-direction: column; /* Stack vertically */
+    align-items: center;
   }
-  
+
+  .menu-items {
+    width: 100%; /* Full width for menu items */
+    text-align: center; /* Center align text */
+  }
+
+  .menu-items h5 {
+    font-size: 1.2rem;
+    margin-top: 10px;
+  }
+
+  .menu-items p {
+    font-size: 0.9rem;
+  }
+
+  .menu-items a {
+    padding: 5px 0;
+  }
+}
+
+/* 3. Medium Devices (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .menu {
+    justify-content: space-around; /* Spread out evenly */
+    flex-wrap: nowrap; /* Prevent wrapping */
+  }
+
+  .menu-items {
+    text-align: left; /* Align text to the left */
+  }
+
+  .menu-items h5 {
+    font-size: 1.3rem; /* Slightly larger headings */
+  }
+
+  .menu-items a {
+    font-size: 1rem;
+  }
+}
+
+/* 4. Large Screens (min-width: 1025px) */
+@media (min-width: 1025px) {
+  .menu {
+    justify-content: space-between; /* Keep default spacing */
+  }
+
+  .menu-items h5 {
+    font-size: 1.4rem; /* Larger headings for big screens */
+  }
+
+  .menu-items a {
+    font-size: 1rem;
+  }
+}
