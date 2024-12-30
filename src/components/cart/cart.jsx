@@ -3,6 +3,7 @@ import { ShopContext } from "../../Context/ShopContext";
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 import DeleteIcon from '@mui/icons-material/Delete';
+import { jsPDF } from "jspdf";
 import "./Cart-Items.css";
 
 const CartItems = () => {
@@ -71,6 +72,7 @@ const CartItems = () => {
     if (response === "yes") {
       if (validateFields()) {
         shareOnWhatsApp();
+        generatePDF();
       }
     } else {
       setShowDialog(false);
@@ -114,6 +116,41 @@ const CartItems = () => {
       minimumFractionDigits: 2,
       maximumFractionDigits: 2,
     }).format(amount);
+  };
+
+  const generatePDF = () => {
+    const doc = new jsPDF();
+    doc.setFont("times");
+
+    let currentY = 20;
+    doc.text("Order Invoice", 14, currentY);
+    currentY += 10;
+    doc.text(`Order ID: ${orderId}`, 14, currentY);
+
+    const cartSummary = generateCartSummary().split("\n");
+    currentY += 20;
+    cartSummary.forEach((line, index) => {
+      doc.text(line, 14, currentY + (index * 10));
+    });
+
+    // Add space before personal details
+    currentY += cartSummary.length * 10 + 10;
+    doc.text("Personal Details:", 14, currentY);
+    currentY += 10; // Add space after "Personal Details"
+
+    const { name, contact, address } = personalDetails;
+    doc.text(`Name: ${name}`, 14, currentY);
+    currentY += 10;
+    doc.text(`Contact: ${contact}`, 14, currentY);
+    currentY += 10;
+    doc.text(`Address: ${address}`, 14, currentY);
+
+    // Add space and Thank You note
+    currentY += 20;
+    doc.text("Thank you for shopping with us!", 14, currentY);
+
+    // Save the PDF
+    doc.save(`${orderId}.pdf`);
   };
 
   // Scroll to top when the component is mounted
@@ -198,9 +235,7 @@ const CartItems = () => {
           {error && <p className="error-message">{error}</p>}
           <button
             onClick={handleProceedToCheckout}
-            disabled={
-              Object.keys(cartItems).filter((itemId) => cartItems[itemId] > 0).length === 0 || getTotalCartAmount() === 0
-            }
+            disabled={Object.keys(cartItems).filter((itemId) => cartItems[itemId] > 0).length === 0 || getTotalCartAmount() === 0}
           >
             Proceed to checkout
           </button>
@@ -236,7 +271,7 @@ const CartItems = () => {
             />
             {error && <p className="error-message">{error}</p>}
             <p>Move to Whatsapp for Payment details?</p>
-            <button onClick={() => handleAlertResponse("yes")} className="sucess-button">Yes</button>
+            <button onClick={() => handleAlertResponse("yes")} className="suce-button">Yes</button>
             <button onClick={() => handleAlertResponse("no")} className="danger-button">No</button> {/* Added class for styling */}
           </div>
         </div>
