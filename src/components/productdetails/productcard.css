@@ -61,19 +61,45 @@
     margin-bottom: 20px;
 }
 
-.buy-now-btn {
-    background: #81C408;
+/* Style for the Buy Now button */
+.btn-buy-now {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #FFB524; /* Golden color for the button */
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
     border: none;
-    color: #fff;
-    padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
-    transition: background 0.3s;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 15px;
 }
 
-.buy-now-btn:hover {
-    background: #FFB524;
+.btn-buy-now:hover {
+    background-color: #FF9E00; /* Darker golden color on hover */
+    transform: translateY(-3px); /* Slightly lift the button */
 }
+
+.btn-buy-now:active {
+    background-color: #FF7F00; /* Even darker golden color on click */
+    transform: translateY(0); /* Reset lift effect when clicked */
+}
+
+.btn-buy-now:focus {
+    outline: none;
+}
+
+/* Responsive style for mobile */
+@media (max-width: 768px) {
+    .btn-buy-now {
+        width: 100%;
+        padding: 12px 20px; /* Adjust padding for smaller screens */
+    }
+}
+
 
 /* Product Filters */
 .product-filters {

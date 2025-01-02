@@ -16,28 +16,32 @@ function Footer() {
             <div className="menu-items">
               <h5>Why People Like Us!</h5>
               <p>
-                A holistic living is fueled with<br /> Organic Cosmetics who chooses<br />
-                faster routes to get<br /> blended with nature...
+                A holistic living is fueled with
+                <br /> Organic Cosmetics who chooses
+                <br />
+                faster routes to get
+                <br /> blended with nature...
               </p>
             </div>
             <div className="menu-items">
               <h5>Our Products</h5>
               <ul>
                 <li>
-                  <Link to="/">Home</Link>
+                  <Link to="/#home">Home</Link>
                 </li>
                 <li>
                   <Link to="/cart">Cart</Link>
                 </li>
                 <li>
-                  <a href="#products-heading">Products</a> {/* Fixed */}
+                  <Link to="/#products-heading">Products</Link>{" "}
+                  {/* Navigate to homepage */}
                 </li>
                 <li>
-                  <a href="#nattu-sakkarai">Nattusakkarai</a> {/* Fixed */}
+                  <Link to="/#nattu-sakkarai">Nattusakkarai</Link>{" "}
+                  {/* Navigate to homepage */}
                 </li>
               </ul>
             </div>
-
             <div className="menu-items">
               <h5>Reach Us</h5>
               <ul>

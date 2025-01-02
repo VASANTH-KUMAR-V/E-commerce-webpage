@@ -5,7 +5,7 @@ import Logo from '../Assets/img/ollir-organics-background.png';
 
 const Handmade = () => {
     return (
-        <div className="container-fluid hero-header py-5" id="Handmade">
+        <div className="container-fluid hero-header py-5" id="home">
             <div >
                 <div className="row g-4 align-items-center">
                     <div className="col-lg-6">
