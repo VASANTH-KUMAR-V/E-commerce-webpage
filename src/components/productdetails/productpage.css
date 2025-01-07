@@ -1,246 +1,131 @@
-/* Reset some default styles */
-body {
-  margin: 0;
-  padding: 0;
-
-}
-
-.container-fluid {
-  padding: 0;
-  overflow: hidden; /* Remove scrollbars caused by parent elements */
-}
-
-body, h1, h3, p {
-  margin: 0;
-  padding: 0;
-}
-
-.container-fluid {
-  padding: 0;
-}
-
+/* Product layout grid */
 .product-layout {
-  display: flex;
-  flex-direction: row; /* Display items side by side on larger screens */
-  justify-content: center; /* Center items horizontally */
-  gap: 1rem;
-  padding: 1rem; /* Add some padding around the layout */
-  margin-top: 5%;
-}
-
-.product-image {
-  width: 50%; /* Take half of the width on larger screens */
-  max-width: 500px; /* Maximum width of image container */
-  margin: 0; /* Remove auto margin */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: center;
+  height: 100vh;
 }
 
 .product-image img {
   width: 100%;
-  height: auto; /* Maintain aspect ratio */
+  height: 500px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-top: 70px;
 }
 
+/* Product details section */
 .product-details {
-  width: 50%; /* Take the other half of the width on larger screens */
-  padding: 1rem;
-  max-width: 600px; /* Adjust based on your design */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .product-title {
   font-size: 2rem;
-  margin-bottom: 0.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
 }
 
 .product-category {
   font-size: 1.2rem;
-  color: #888;
+  font-style: italic;
+  color: #666;
+  margin-bottom: 10px;
 }
 
 .product-price {
-  font-size: 1.5rem;
-  color: #333;
-  margin: 0.5rem 0;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #010000;
+  margin-bottom: 15px;
 }
 
-.product-rating {
-  margin: 0.5rem 0;
+.product-price-size {
+  font-size: 1rem;
+  color: #555;
+  margin-left: 5px;
+}
+
+.btn-add-to-cart {
+  background-color: #81C408;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: background-color 0.3s;
+}
+
+.btn-add-to-cart:hover {
+  background-color: #81C408;
 }
 
 .product-description {
-  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #444;
+  margin-bottom: 15px;
 }
 
-/* Button Styling */
-.btn-add-to-cart {
-  display: flex; /* Use flex for alignment */
-  align-items: center; /* Align items vertically */
-  justify-content: center; /* Center content horizontally */
-  gap: 0.5rem; /* Space between icon and text */
-  padding: 0.75rem 1.5rem; /* Padding for size */
-  font-size: 1rem; /* Font size */
-  font-weight: bold; /* Bold text */
-  color: #fff; /* White text */
-  background-color: #81C408; /* Green background */
-  border: none; /* Remove default border */
-  border-radius: 0.5rem; /* Rounded corners */
-  cursor: pointer; /* Pointer cursor on hover */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Light shadow effect */
-  transition: all 0.3s ease; /* Smooth transition for hover */
-}
-
-/* Hover effect */
-.btn-add-to-cart:hover {
-  background-color: #218838; /* Darker green on hover */
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
-}
-
-/* Icon inside the button */
-.btn-add-to-cart i {
-  font-size: 1.2rem; /* Icon size */
-}
-
-/* Active state */
-.btn-add-to-cart:active {
-  transform: scale(0.95); /* Slight scale effect on click */
-}
-
-.product-categories {
-  margin-top: 1rem;
-}
-
-.product-categories ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-.product-categories li {
-  display: flex;
-  align-items: center;
-  margin-bottom: 0.5rem;
-}
-
-.reviews {
-  margin-top: 1rem;
-}
-
-.review {
-  display: flex;
-  align-items: center;
-  margin-bottom: 1rem;
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 1rem;
-}
-
-.review-avatar {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  margin-right: 1rem;
-}
-
-.review-content {
-  flex: 1;
-}
-
-.review-date {
-  font-size: 0.9rem;
-  color: #888;
-}
-
-.review-rating {
-  margin: 0.5rem 0;
-}
-.product-price-size {
-
-  color: #4e4949;
-  font-size:0.7em;
-}
-
-
-/* Media Queries */
-@media (max-width: 992px) {
-  .product-layout {
-    flex-direction: column; /* Stack items vertically on smaller screens */
-    margin-top: 10%; /* Add margin-top for mobile view */
-  }
-
-  .product-image,
-  .product-details {
-    width: 100%; /* Full width for image and details */
-    max-width: none; /* Remove max-width constraint */
-    padding: 1rem; /* Add padding */
-  }
-
-  .product-title {
-    font-size: 1.75rem;
-  }
-
-  .product-category {
-    font-size: 1.1rem;
-  }
-
-  .product-price {
-    font-size: 1.25rem;
-  }
-}
-
+/* Responsive design for tablets and small screens */
 @media (max-width: 768px) {
   .product-layout {
-    margin-top: 10%; /* Add margin-top for mobile view */
+    grid-template-columns: 1fr;
   }
 
   .product-title {
     font-size: 1.5rem;
   }
 
+  .product-price {
+    font-size: 1.5rem;
+  }
+
+  .btn-add-to-cart {
+    width: 100%;
+    padding: 12px;
+  }
+}
+
+/* Responsive design for mobile devices < 480px */
+@media (max-width: 480px) {
+  .product-layout {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    height: auto;
+    margin-top: 60px;
+  }
+
+  .product-image img {
+    height: auto;
+    margin-top: 20px;
+  }
+
+  .product-title {
+    font-size: 1.2rem;
+  }
+
   .product-category {
     font-size: 1rem;
   }
 
   .product-price {
-    font-size: 1rem;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
   }
 
   .btn-add-to-cart {
-    padding: 0.5rem;
+    width: 100%;
+    padding: 10px;
     font-size: 0.9rem;
   }
 
-  .review-avatar {
-    width: 40px;
-    height: 40px;
-  }
-
-  .review-date {
-    font-size: 0.8rem;
-  }
-}
-
-
-@media (max-width: 576px) {
-  .product-layout {
-    margin-top: 10%; /* Add margin-top for mobile view */
-  }
-
-  .product-title {
-    font-size: 1.25rem;
-  }
-
-  .product-category,
-  .product-price {
+  .product-description {
     font-size: 0.9rem;
-  }
-
-  .btn-add-to-cart {
-    padding: 0.5rem;
-    font-size: 0.9rem;
-  }
-
-  .review-avatar {
-    width: 35px;
-    height: 35px;
-  }
-
-  .review-date {
-    font-size: 0.75rem;
   }
 }
