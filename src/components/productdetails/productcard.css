@@ -24,29 +24,31 @@
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }
 
-.heading{
-    
-    font-size: 3em; /* Larger heading size */
-    margin-top: 50px; /* Space below the heading */
-    margin-bottom:0px; /* Space below the heading */
-    font-family: 'Trebuchet MS', Arial, sans-serif; /* Font style */
-    color: #FFB524; /* Golden yellow text */
-    text-transform: uppercase; /* Makes the heading stand out */
-    letter-spacing: 2px; /* Add some spacing between letters */
+/* Heading Styles */
+.heading, .h2 {
+    font-size: 3em;
+    margin-top: 50px;
+    margin-bottom: 0px;
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+    color: #FFB524;
+    text-transform: uppercase;
+    letter-spacing: 2px;
     text-align: center;
+    font-weight: bold;
 }
+
 /* Hover-Zoom Effect for Product Images */
 .product-image {
     width: 100%;
     height: auto;
     border-bottom: 1px solid #ddd;
     margin-bottom: 15px;
-    transition: transform 0.3s ease-in-out, border 0.3s ease-in-out; /* Smooth transition for the border */
+    transition: transform 0.3s ease-in-out, border 0.3s ease-in-out;
 }
 
 .product-card:hover .product-image {
-    transform: scale(1.1); /* Zoom effect on hover */
-    border-bottom: none; /* Remove border during hover */
+    transform: scale(1.1);
+    border-bottom: none;
 }
 
 /* Product Details */
@@ -65,7 +67,7 @@
 .btn-buy-now {
     display: inline-block;
     padding: 12px 24px;
-    background-color: #FFB524; /* Golden color for the button */
+    background-color: #FFB524;
     color: white;
     font-size: 1rem;
     font-weight: bold;
@@ -79,27 +81,18 @@
 }
 
 .btn-buy-now:hover {
-    background-color: #FF9E00; /* Darker golden color on hover */
-    transform: translateY(-3px); /* Slightly lift the button */
+    background-color: #FF9E00;
+    transform: translateY(-3px);
 }
 
 .btn-buy-now:active {
-    background-color: #FF7F00; /* Even darker golden color on click */
-    transform: translateY(0); /* Reset lift effect when clicked */
+    background-color: #FF7F00;
+    transform: translateY(0);
 }
 
 .btn-buy-now:focus {
     outline: none;
 }
-
-/* Responsive style for mobile */
-@media (max-width: 768px) {
-    .btn-buy-now {
-        width: 100%;
-        padding: 12px 20px; /* Adjust padding for smaller screens */
-    }
-}
-
 
 /* Product Filters */
 .product-filters {
@@ -117,6 +110,7 @@
     color: white;
     cursor: pointer;
     border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
 
 .product-filters button:hover {
@@ -148,6 +142,11 @@
         font-size: 1.5em;
         text-align: center;
     }
+    
+    .btn-buy-now {
+        width: 100%;
+        padding: 12px 20px;
+    }
 }
 
 /* Tablet view adjustments */
@@ -177,19 +176,9 @@
 .product-detail span.read-more {
     color: #888;
     cursor: pointer;
+    transition: color 0.3s ease;
 }
 
 .product-detail span.read-more:hover {
     color: #FFB524;
-}
-
-.h2 {
-    font-size: 2em;
-    font-weight: bold;
-    text-align: center;
-    color: #FFB524;
-    margin: 40px 0;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    position: relative;
 }
