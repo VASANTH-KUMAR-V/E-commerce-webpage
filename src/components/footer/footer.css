@@ -12,6 +12,7 @@ html {
   background-color: #45595B; /* Dark background */
   border: 1px solid #ddd;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-top: 50px;
 }
 
 /* Header Titles */

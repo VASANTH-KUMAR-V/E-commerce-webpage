@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom'; // Import useNavigate
+import { useParams, useNavigate } from 'react-router-dom';
 import { ShopContext } from '../../Context/ShopContext';
 import { products } from '../../data/productdata';
 import './productpage.css';
@@ -8,11 +8,11 @@ const ProductPage = () => {
   const { productId } = useParams();
   const { addToCart } = useContext(ShopContext);
   const [cartVisible, setCartVisible] = useState(false);
-  const navigate = useNavigate(); // Initialize navigate function
+  const navigate = useNavigate();
 
   useEffect(() => {
     window.scrollTo(0, 0); // Scroll to top after component renders
-  }, []); // Runs only once when the component mounts
+  }, []);
 
   const product = products[productId];
 
@@ -34,7 +34,8 @@ const ProductPage = () => {
 
   const handleAddToCart = () => {
     addToCart(productId);
-    setCartVisible(true); // Show "Go to Cart" button after adding to cart
+    alert("Your items are added to the cart."); // Display alert message
+    setCartVisible(true);
   };
 
   const handleGoToCart = () => {
@@ -63,7 +64,7 @@ const ProductPage = () => {
             {cartVisible && (
               <button
                 className="btn-go-to-cart"
-                onClick={handleGoToCart} // Add onClick to navigate
+                onClick={handleGoToCart}
               >
                 <i className="fas fa-shopping-bag"></i> Go to Cart
               </button>
