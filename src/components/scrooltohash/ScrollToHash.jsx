@@ -1,19 +1,22 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
-function ScrollToHash() {
-  const location = useLocation();
+const ScrollToHash = () => {
+  const { hash } = useLocation();
 
   useEffect(() => {
-    if (location.hash) {
-      const element = document.querySelector(location.hash);
+    if (hash) {
+      const element = document.querySelector(hash); // Find the element matching the hash
       if (element) {
         element.scrollIntoView({ behavior: "smooth" });
       }
+    } else {
+      // Scroll to the top if no hash
+      window.scrollTo(0, 0);
     }
-  }, [location]);
+  }, [hash]);
 
   return null;
-}
+};
 
 export default ScrollToHash;

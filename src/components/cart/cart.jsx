@@ -111,7 +111,7 @@ const CartItems = () => {
 
   const shareOnWhatsApp = () => {
     const cartSummary = generateCartSummary();
-    const phoneNumber = "+918072964926";
+    const phoneNumber = "+919363620057";
     const { name, contact, address } = personalDetails;
     const message = `Order ID: ${orderId}\n\nOrder Summary:\n${cartSummary}\n\nPersonal Details:\nName: ${name}\nContact: ${contact}\nAddress: ${address}`;
     const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
