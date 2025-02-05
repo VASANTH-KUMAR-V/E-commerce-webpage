@@ -1,7 +1,7 @@
 <<<<<<< HEAD
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was hosted as [ollirorganics.com]([url](https://e-commerce-website-2ee9e.web.app/))
 
 ## Available Scripts
 
