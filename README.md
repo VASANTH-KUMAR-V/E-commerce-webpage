@@ -1,8 +1,7 @@
 <<<<<<< HEAD
 # Getting Started with Create React App
 
-This project was hosted as [ollirorganics.com]([https://e-commerce-website-2ee9e.web.app])
-
+This project was hosted as [ollirorganics.com]([ollirorganics.com](https://ollirorganics.com/))
 ## Available Scripts
 
 In the project directory, you can run:
